@@ -9,9 +9,6 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/go-modules/modules"
-
-	_ "github.com/lib/pq"
 )
 
 var (
