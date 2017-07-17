@@ -1,0 +1,24 @@
+resources:
+- name: BOB
+  type: git
+  source:
+    uri: https://github.com/brooklyyounce/go-web-sql.git
+
+- name: cf-deploy
+  type: cf
+  source:
+    api: https://api.run.pivotal.io
+    username: coxcs1@etsu.edu
+    password: Dog.Bark1();
+    organization: coxcs1-org
+    space: development
+    skip_cert_check: true
+jobs:
+- name: go-get-deply
+  serial: true
+  plan:
+  - {get: BOB, trigger: true}
+  - put: cf-deploy
+    params:
+      manifest: BOB/manifest.yml
+      path: cf-deploy
