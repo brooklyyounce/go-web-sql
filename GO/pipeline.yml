@@ -20,5 +20,5 @@ jobs:
   - {get: BOB, trigger: true}
   - put: cf-deploy
     params:
-      manifest: BOB/manifest.yml
+      manifest: BOB/GO/manifest.yml
       path: cf-deploy
